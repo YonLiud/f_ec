@@ -43,29 +43,24 @@ def create_user():
     browser.find_element_by_id("pf_ecrp_forum_name").send_keys("Eclipse Roleplay")
     browser.find_element_by_id("answer").send_keys(question)
     browser.find_element_by_id("submit").click()
-    browser.implicitly_wait(10)
-    # wait for 1 minute for the email to verify
-    time.sleep(60)
-    
-
-    
-    
-    
-    
-    
+    browser.implicitly_wait(30)
     return username, password
 username, password = create_user()
+spammer.login(username, password, browser)
+    
 
-# while True:
-#     try:
-#         browser.implicitly_wait(2)
-#         spammer.create_thread(sasg, browser)
-#         browser.implicitly_wait(2)
-#         spammer.create_thread(lspd, browser)
-#         browser.implicitly_wait(2)
-#         spammer.create_thread(lsems, browser)
-#         browser.implicitly_wait(2)
-#         spammer.create_thread(sadoc, browser)
-#     except Exception as e:
-#         print("I think he pussied out again... TIME TO DO AGAIN!")
-#         username, password = create_user()
+
+while True:
+    try:
+        browser.implicitly_wait(2)
+        spammer.create_thread(sasg, browser)
+        browser.implicitly_wait(2)
+        spammer.create_thread(lspd, browser)
+        browser.implicitly_wait(2)
+        spammer.create_thread(lsems, browser)
+        browser.implicitly_wait(2)
+        spammer.create_thread(sadoc, browser)
+    except Exception as e:
+        print("I think he pussied out again... TIME TO DO AGAIN!")
+        username, password = create_user()
+        spammer.login(username, password, browser)

@@ -1,6 +1,6 @@
 import os, time, string, random
 from selenium import webdriver
-import spammer
+import spammer, mail_handler
 
 sasg = 'https://gov.eclipse-rp.net/posting.php?mode=post&f=644'
 lspd = 'https://gov.eclipse-rp.net/posting.php?mode=post&f=23'

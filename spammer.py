@@ -19,7 +19,8 @@ def create_thread(url, browser):
     message_element = browser.find_element_by_id('message')
     post_button = browser.find_element_by_name('post')
 
-    subject_element.send_keys('Dexter DeShawn NonRP Appeal') # << TITLE
-    message_element.send_keys("I apologize for the inconvenience of me not giving a fuck") # << MESSAGE
+    subject_element.send_keys('Hello, Friend') # << TITLE
+    message_element.send_keys("""谢谢! Thank you very much! for being my mentor ECRP Staff! Please! Admit defeat, or this wave won't be the last one you see!
+谢谢 again! Until next account! """) # << MESSAGE
     post_button.click()
     browser.implicitly_wait(2)

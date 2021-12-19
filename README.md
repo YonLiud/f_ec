@@ -7,7 +7,8 @@ The project is built mainly for attackig a phpBB forum, but it can be used for a
 
 ## Features
 
-    * Create accounts automatically
+    * Create email accounts
+    * Authenticate and create accounts automatically
     * Spam forum threads
 
 ## Up coming features
@@ -20,3 +21,7 @@ This project is licensed under the MIT license. which can be found [here](https:
 
 The project was built for educational purposes only. If you intend of using this project for malicious purposes, you are not allowed to use it.
 In case of malicious use, you are responsible for all consequences.
+
+## Used Scripts:
+
+[https://github.com/Xavier-Lam/24mail](24mail by Xavier Lam)

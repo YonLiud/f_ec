@@ -1,16 +1,20 @@
-from selenium import webdriver
-import clipboard
-
-
-
-
-# create a new instance of the chrome driver and call it mail_handler
-mail_handler = webdriver.Chrome('./chromedriver.exe')
-TenMinuteMail = "https://www.10minutemail.net/"
-
-def get_mail():
-    mail_handler.get(TenMinuteMail)
-    mail_handler.implicitly_wait(10)
-    mail_handler.find_element_by_id("copy-button").click()
-    mail_handler.implicitly_wait(10)
-    return clipboard.paste()
+import asyncio
+from xtempmail import Email, extension
+import logging
+from xtempmail import mail
+from xtempmail.mail import EmailMessage
+import requests
+import selenium.webdriver
+requests.get('https://google.com',params={'a':1})
+log = logging.getLogger('xtempmail')
+log.setLevel(logging.INFO)
+# browser = webdriver.Chrome('./chromedriver.exe')
+def main(mail_addr):
+    mail_app = Email(name=mail_addr, ext=extension[1])
+    @mail_app.on.message()
+    def get(data):
+        # parse the data
+        print(data.text)
+        
+    mail_app.listen_new_message(interval=2)
+    
